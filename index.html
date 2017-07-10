@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <button id="getNewDeck">PLAY BLACKJACK</button>
+    <button id="drawCard">DRAW A CARD</button>
+    <button id="bank">BANK</button>
+    <div id="cards"></div>
+    <!-- mustache templates(script tags make them invisible) -->
+    <!-- `type` is specified for this script because it is not js --> 
+    <script id="cards-deck-template" type="x-tmpl-mustache">
+        <ul>
+        {{ #content }}
+            <li>{{ deck_id }}: {{ remaining }}</li>
+        {{ /content }}
+        </ul>
+    </script>
+    <script id="your-card" type="x-tmpl-mustache">
+        <ul>
+        {{ #content }}
+            {{ #cards }}
+            <li>
+                <img src="{{ image }}"/></li>
+            {{ /cards }}
+        {{ /content }}
+        </ul>
+    </script>
+    <!-- jquery(utility library) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    
+    <!-- mustache(templating library) -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
